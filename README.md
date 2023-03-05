@@ -1,2 +1,1 @@
-# Aaron Eakins Site
-Personal resume site for Aaron Eakins
+## Personal resume site for Aaron Eakins
