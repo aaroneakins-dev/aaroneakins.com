@@ -1,0 +1,42 @@
+/* Custom CSS */
+
+/* Sidebar */
+.sidebar {
+	width: 250px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: #1a1a1a; /* Dark background for the sidebar */
+  }
+  
+  .sidebar .logo {
+	text-align: center;
+	padding: 20px 0;
+  }
+  
+  .bg-royal-blue {
+	background-color: #4169E1; /* Royal Blue background for the navigation */
+  }
+  
+  /* Main content */
+  .main-content {
+	margin-left: 250px; /* Offset the main content by the width of the sidebar */
+	padding: 2rem;
+	background-color: #aeaeae; /* Main body background color */
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 991px) {
+	.sidebar {
+	  width: 100%;
+	  height: auto;
+	  position: relative;
+	}
+  
+	.main-content {
+	  margin-left: 0;
+	  margin-top: 200px; /* Offset the main content by the height of the expanded sidebar on smaller screens */
+	}
+  }
+  
