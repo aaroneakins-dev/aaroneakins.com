@@ -9,9 +9,74 @@
 	/* Main body background color */
 }
 
+body {
+	font-family: 'Cabin', sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+	color: #212529;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+}
+
+h1 {
+	font-size: 2.25rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1rem;
+	text-transform: uppercase;
+	margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.1rem;   /* Job titles */
+  font-weight: 600;
+  margin-top: 1.25rem;
+}
+
+p, li {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+	
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Work Experience */
 .resume-dates {
-	margin-left: 12px;
-	display: inline-block;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6c757d;
+}
+
+.work-experience h4 {
+  font-weight: 600;
+  margin-top: 1.25rem;
+}
+
+.work-experience p {
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 0.25rem;
+}
+
+.work-experience .resume-dates {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6c757d;
 }
 
 /* Sidebar */
@@ -31,15 +96,20 @@
 }
 
 .list-group-item {
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  border: none;
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+	border: none;
 }
 
 .list-group-item strong {
-  display: block;
-  margin-bottom: 2px;
-  font-weight: 600;
+	display: block;
+	margin-bottom: 2px;
+	font-weight: 600;
+}
+
+.card-title, h2 {
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.25rem;
 }
 
 /* Adjustments for smaller screens */
@@ -53,6 +123,17 @@
 	.main-content {
 		margin-left: 0;
 		margin-top: 200px;
-		/* Offset the main content by the height of the expanded sidebar on smaller screens */
+	}
+}
+
+@media (max-width: 576px) {
+	h1 {
+		font-size: 1.75rem;
+	}
+	h2 {
+		font-size: 1.25rem;
+	}
+	p, li {
+		font-size: 0.95rem;
 	}
 }
