@@ -1,5 +1,19 @@
 /* Custom CSS */
 
+/* Main content */
+.main-content {
+	margin-left: 250px;
+	/* Offset the main content by the width of the sidebar */
+	padding: 2rem;
+	background-color: #aeaeae;
+	/* Main body background color */
+}
+
+.resume-dates {
+	margin-left: 12px;
+	display: inline-block;
+}
+
 /* Sidebar */
 .sidebar {
 	width: 250px;
@@ -16,23 +30,16 @@
 	padding: 20px 0;
 }
 
-.bg-royal-blue {
-	background-color: #4169E1;
-	/* Royal Blue background for the navigation */
+.list-group-item {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  border: none;
 }
 
-/* Main content */
-.main-content {
-	margin-left: 250px;
-	/* Offset the main content by the width of the sidebar */
-	padding: 2rem;
-	background-color: #aeaeae;
-	/* Main body background color */
-}
-
-.resume-dates {
-	margin-left: 12px;
-	display: inline-block;
+.list-group-item strong {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 600;
 }
 
 /* Adjustments for smaller screens */
