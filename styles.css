@@ -94,4 +94,12 @@ ul li {
 	p, li {
 		font-size: 0.95rem;
 	}
+	.intro-text {
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+	.work-experience {
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
 }
