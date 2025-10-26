@@ -9,6 +9,10 @@
 	/* Main body background color */
 }
 
+.hero-header {
+	background-color: darkblue;
+}
+
 body {
 	font-family: 'Cabin', sans-serif;
 	font-size: 1rem;
@@ -53,6 +57,11 @@ p, li {
 	
 ul li {
   margin-bottom: 0.5rem;
+}
+
+.intro-text,
+.work-summary {
+  text-align: justify;
 }
 
 /* Work Experience */
