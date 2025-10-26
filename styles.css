@@ -52,7 +52,12 @@ ul li {
 
 .intro-text,
 .work-summary {
-  text-align: justify;
+  text-align: left;
+}
+
+.work-summary ul {
+  margin-left: 0;
+  padding-left: 1rem;
 }
 
 /* Work Experience */
