@@ -1,14 +1,5 @@
 /* Custom CSS */
 
-/* Main content */
-.main-content {
-	margin-left: 250px;
-	/* Offset the main content by the width of the sidebar */
-	padding: 2rem;
-	background-color: #aeaeae;
-	/* Main body background color */
-}
-
 .hero-header {
 	background-color: darkblue;
 }
@@ -88,51 +79,9 @@ ul li {
   color: #6c757d;
 }
 
-/* Sidebar */
-.sidebar {
-	width: 250px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	background-color: #1a1a1a;
-	/* Dark background for the sidebar */
-}
-
-.sidebar .logo {
-	text-align: center;
-	padding: 20px 0;
-}
-
-.list-group-item {
-	padding-top: 0.4rem;
-	padding-bottom: 0.4rem;
-	border: none;
-}
-
-.list-group-item strong {
-	display: block;
-	margin-bottom: 2px;
-	font-weight: 600;
-}
-
-.card-title, h2 {
-  border-bottom: 2px solid #eaeaea;
-  padding-bottom: 0.25rem;
-}
-
 /* Adjustments for smaller screens */
 @media (max-width: 991px) {
-	.sidebar {
-		width: 100%;
-		height: auto;
-		position: relative;
-	}
-
-	.main-content {
-		margin-left: 0;
-		margin-top: 200px;
-	}
+	/* responsive adjustments available if future layout needs */
 }
 
 @media (max-width: 576px) {
