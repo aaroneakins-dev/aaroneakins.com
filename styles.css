@@ -108,3 +108,51 @@ ul li {
 		padding-right: 1.25rem;
 	}
 }
+
+/* Make the main nav sticky once it reaches the top of the viewport */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+nav.stuck {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    backdrop-filter: saturate(1.05) blur(4px);
+    transition: box-shadow 180ms ease, backdrop-filter 180ms ease;
+}
+
+.nav-sentinel {
+	display: block;
+	width: 2px;
+	height: 2px;
+	visibility: hidden;
+}
+
+/* Hexagonal Background Styles */
+#hexBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    transition: background 0.5s ease;
+}
+
+:root {
+    --bg1: #e0e0e0;
+    --bg2: #ffffff;
+    --hex-stroke: #b0b0b0;
+    --text: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg1: #121212;
+        --bg2: #2a2a2a;
+        --hex-stroke: #555;
+        --text: #ddd;
+    }
+}

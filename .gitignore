@@ -27,3 +27,6 @@ dist/
 # Server/system folders
 logs/
 config/
+
+# ToDo: My ToDo list and elements I'm experimenting with
+todo/
