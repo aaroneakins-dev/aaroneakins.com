@@ -270,10 +270,16 @@ nav {
   backdrop-filter: blur(8px);
 }
 
+/* Base: hidden on all screens */
 .nav-hide {
+  opacity: 0;
+  transform: translateY(-6px);
+  visibility: hidden;
+  transition: opacity 300ms ease, transform 250ms ease, visibility 0ms linear 250ms;
   font-family: 'Raleway', sans-serif;
 }
 
+/* Sticky behavior only for desktops */
 @media (min-width: 992px) {
   nav {
     position: sticky;
@@ -281,13 +287,7 @@ nav {
     z-index: 50;
   }
 
-  .nav-hide {
-    opacity: 0;
-    transform: translateY(-6px);
-    visibility: hidden;
-    transition: opacity 300ms ease, transform 250ms ease, visibility 0ms linear 250ms;
-  }
-
+  /* Show name/title only when stuck */
   nav.stuck .nav-hide {
     opacity: 1;
     transform: translateY(0);
