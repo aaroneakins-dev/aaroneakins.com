@@ -1,16 +1,161 @@
-/* Custom CSS */
+/* LIGHT THEME */
+:root {
+  /* Base */
+  --bg: #f7fbff;
+  /* warm off-white background */
+  --text: #1a1a1a;
+  /* near-black text */
+  --text-muted: #575965;
+  /* soft slate gray for secondary text */
 
-.hero-header {
-  background-color: darkblue;
+  /* Surfaces */
+  --card-bg: #f3f3f3;
+  --nav-bg: #f8f7ff;
+
+  /* Accents */
+  --accent: #1a3d63;
+  /* deep navy accent */
+  --accent-light: #5b88b2;
+  /* lighter steel-blue accent */
+  --link: #1a3d63;
+  --link-hover: #0a1931;
+
+  /* Borders and dividers */
+  --border: #ccc5b9;
+
+  /* Background gradient tones */
+  --bg1: #fbf9e4;
+  --bg2: #b3cfe5;
 }
 
+/* DARK THEME */
+[data-theme="dark"] {
+  /* Base */
+  --bg: #1d2746;
+  --text: #d9dcf8;
+  --text-muted: #a9b2e6;
+
+  /* Surfaces */
+  --card-bg: #242633;
+  --nav-bg: #242633;
+
+  /* Accents */
+  --accent: #5b88b2;
+  /* balanced blue highlight */
+  --accent-light: #b3cfe5;
+  /* softer highlight for hover or glow */
+  --link: #b3cfe5;
+  --link-hover: #4a7fa7;
+
+  /* Borders and dividers */
+  --border: #353a3e;
+
+  /* Background gradient tones */
+  --bg1: #121212;
+  --bg2: #1a3d63;
+}
+
+/* BASE ELEMENTS */
 body {
   font-family: 'Cabin', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #212529;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
 }
 
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 20;
+  user-select: none;
+}
+
+/* icons */
+.theme-toggle img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Light theme */
+:root .theme-toggle img {
+  filter: none;
+}
+
+/* Dark theme: invert icons to light */
+[data-theme="dark"] .theme-toggle img {
+  filter: invert(1) brightness(1.2);
+}
+
+/* icon dimming based on toggle state */
+.theme-toggle input:checked ~ .icon-sun {
+  opacity: 0.4;
+}
+.theme-toggle input:not(:checked) ~ .icon-moon {
+  opacity: 0.4;
+}
+
+/* toggle track */
+.theme-toggle input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 35px;
+  height: 20px;
+  position: relative;
+  background: var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+/* slider knob */
+.theme-toggle input::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle input:checked {
+  background: var(--accent-light);
+}
+
+.theme-toggle input:checked::before {
+  transform: translateX(15px);
+}
+
+/* TYPOGRAPHY */
 h1,
 h2,
 h3,
@@ -36,7 +181,6 @@ h2 {
 
 h4 {
   font-size: 1.1rem;
-  /* Job titles */
   font-weight: 600;
   margin-top: 1.25rem;
 }
@@ -52,6 +196,14 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
+.text-muted {
+  color: var(--text-muted);
+}
+
+.accent {
+  color: var(--accent);
+}
+
 .intro-text,
 .work-summary {
   text-align: left;
@@ -62,11 +214,10 @@ ul li {
   padding-left: 1rem;
 }
 
-/* Work Experience */
+/* WORK EXPERIENCE */
 .resume-dates {
   font-size: 0.9rem;
   font-style: italic;
-  color: #6c757d;
 }
 
 .work-experience h4 {
@@ -76,21 +227,15 @@ ul li {
 
 .work-experience p {
   font-weight: 400;
-  color: #444;
   margin-bottom: 0.25rem;
 }
 
 .work-experience .resume-dates {
   font-size: 0.9rem;
   font-style: italic;
-  color: #6c757d;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 991px) {
-  /* responsive adjustments available if future layout needs */
-}
-
+/* RESPONSIVE */
 @media (max-width: 576px) {
   h1 {
     font-size: 1.75rem;
@@ -116,11 +261,13 @@ ul li {
   }
 }
 
-/* Make the main nav sticky once it reaches the top of the viewport */
+/* NAVIGATION */
 nav {
   position: relative;
   top: auto;
   z-index: 50;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(8px);
 }
 
 .nav-hide {
@@ -149,28 +296,24 @@ nav {
   }
 }
 
-nav .nav-hide h4 {
-  margin: 0;
-  line-height: 1;
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: #d8d8d8;
-}
-
+nav .nav-hide h4,
 nav .nav-hide small {
   margin: 0;
   line-height: 1;
   font-size: 1rem;
-  font-weight: 200;
-  color: #d8d8d8;
+  font-weight: 400;
+  color: var(--text);
 }
 
 nav.stuck {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  background-color: var(--nav-bg);
   backdrop-filter: saturate(1.05) blur(4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   transition: box-shadow 180ms ease, backdrop-filter 180ms ease;
-  background-color: rgba(33, 37, 41, 0.97);
-  /* slightly transparent dark background */
+}
+
+[data-theme="dark"] nav.stuck {
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.1);
 }
 
 .nav-sentinel {
@@ -180,7 +323,7 @@ nav.stuck {
   visibility: hidden;
 }
 
-/* Hexagonal Background Styles */
+/* HEX BACKGROUND */
 #hexBackground {
   position: fixed;
   top: 0;
@@ -190,20 +333,4 @@ nav.stuck {
   z-index: -1;
   background: linear-gradient(135deg, var(--bg1), var(--bg2));
   transition: background 0.5s ease;
-}
-
-:root {
-  --bg1: #e0e0e0;
-  --bg2: #ffffff;
-  --hex-stroke: #b0b0b0;
-  --text: #222;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg1: #121212;
-    --bg2: #2a2a2a;
-    --hex-stroke: #555;
-    --text: #ddd;
-  }
 }
