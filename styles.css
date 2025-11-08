@@ -1,27 +1,26 @@
 /* LIGHT THEME */
+/* LIGHT THEME */
 :root {
+  --bs-secondary-color: var(--text-muted);
   /* Base */
-  --bg: #f7fbff;
-  /* warm off-white background */
-  --text: #1a1a1a;
-  /* near-black text */
-  --text-muted: #575965;
-  /* soft slate gray for secondary text */
+  --bg: #f8fafc;               /* clean neutral base */
+  --text: #1c1e21;             /* near-black */
+  --text-muted: #60636f;       /* soft slate gray */
+  --text-accent: #1e4a6d;      /* strong header/nav text */
 
   /* Surfaces */
-  --card-bg: #f3f3f3;
-  --nav-bg: #dadada;
+  --card-bg: #ffffff;
+  --nav-bg: #e6e9ef;
 
   /* Accents */
-  --accent: #1a3d63;
-  /* deep navy accent */
-  --accent-light: #5b88b2;
-  /* lighter steel-blue accent */
+  --accent: #1a3d63;           /* deep navy accent */
+  --accent-light: #3b366b;     /* steel blue highlight */
+  --accent-faint: #c5d9eb;     /* subtle hover tint */
   --link: #1a3d63;
   --link-hover: #0a1931;
 
   /* Borders and dividers */
-  --border: #ccc5b9;
+  --border: #cfd4da;
 
   /* Background gradient tones */
   --bg1: #fbf9e4;
@@ -30,22 +29,23 @@
 
 /* DARK THEME */
 [data-theme="dark"] {
+  --bs-secondary-color: var(--text-muted);
   /* Base */
   --bg: #1d2746;
   --text: #d9dcf8;
-  --text-muted: #a9b2e6;
+  --text-muted: #bdc4e9;
+  --text-accent: #e5e9ff;
 
   /* Surfaces */
   --card-bg: #242633;
-  --nav-bg: #405283;
+  --nav-bg: #3b4a73;
 
   /* Accents */
-  --accent: #5b88b2;
-  /* balanced blue highlight */
-  --accent-light: #b3cfe5;
-  /* softer highlight for hover or glow */
+  --accent: #5b88b2;           /* balanced blue highlight */
+  --accent-light: #b3cfe5;     /* softer glow */
+  --accent-faint: #2a3858;     /* faint hover background */
   --link: #b3cfe5;
-  --link-hover: #4a7fa7;
+  --link-hover: #7fb0d6;
 
   /* Borders and dividers */
   --border: #353a3e;
@@ -54,6 +54,7 @@
   --bg1: #121212;
   --bg2: #1a3d63;
 }
+
 
 /* BASE ELEMENTS */
 body {
@@ -157,9 +158,13 @@ a:hover {
 }
 
 /* TYPOGRAPHY */
+p {
+  letter-spacing: 0.4px;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: 'Raleway', sans-serif;
-  color: var(--accent);
+  color: var(--text-accent);
   letter-spacing: 0.5px;
   margin-top: 1rem;
   margin-bottom: 0.6rem;
@@ -207,6 +212,7 @@ h5 {
 p, li {
   font-size: 1rem;
   line-height: 1.65;
+  letter-spacing: 0.4px;
   margin-top: 0;
   margin-bottom: 0.65rem;
 }
